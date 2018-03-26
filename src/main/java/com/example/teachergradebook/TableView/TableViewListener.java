@@ -35,15 +35,15 @@ public class TableViewListener implements ITableViewListener {
     /**
      * Called when user click any cell item.
      *
-     * @param cellView : Clicked Cell ViewHolder.
-     * @param column   : X (Column) position of Clicked Cell item.
-     * @param row      : Y (Row) position of Clicked Cell item.
+     * @param cellView : Clicked Student ViewHolder.
+     * @param column   : X (Column) position of Clicked Student item.
+     * @param row      : Y (Row) position of Clicked Student item.
      */
     @Override
     public void onCellClicked(@NonNull RecyclerView.ViewHolder cellView, int column, int row) {
 
 
-        ((CellViewHolder) cellView).getData(mContext);
+
 
 
     }
@@ -53,14 +53,14 @@ public class TableViewListener implements ITableViewListener {
     /**
      * Called when user long press any cell item.
      *
-     * @param cellView : Long Pressed Cell ViewHolder.
-     * @param column   : X (Column) position of Long Pressed Cell item.
-     * @param row      : Y (Row) position of Long Pressed Cell item.
+     * @param cellView : Long Pressed Student ViewHolder.
+     * @param column   : X (Column) position of Long Pressed Student item.
+     * @param row      : Y (Row) position of Long Pressed Student item.
      */
     @Override
     public void onCellLongPressed(@NonNull RecyclerView.ViewHolder cellView, int column, int row) {
         // Do What you want
-        showToast("Cell " + column + " " + row + " has been long pressed.");
+        showToast("Student " + column + " " + row + " has been long pressed.");
     }
 
     /**

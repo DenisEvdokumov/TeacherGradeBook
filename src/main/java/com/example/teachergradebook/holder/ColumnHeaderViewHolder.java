@@ -17,8 +17,6 @@
 
 package com.example.teachergradebook.holder;
 
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -29,7 +27,7 @@ import com.evrencoskun.tableview.ITableView;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractSorterViewHolder;
 import com.evrencoskun.tableview.sort.SortState;
 import com.example.teachergradebook.R;
-import com.example.teachergradebook.data.ColumnHeader;
+import com.example.teachergradebook.data.model.Practice;
 
 /**
  * Created by evrencoskun on 23/10/2017.
@@ -67,8 +65,8 @@ public class ColumnHeaderViewHolder extends AbstractSorterViewHolder {
     /**
      * This method is calling from onBindColumnHeaderHolder on TableViewAdapter
      */
-    public void setColumnHeader(ColumnHeader columnHeader) {
-        column_header_textview.setText(String.valueOf(columnHeader.getData()));
+    public void setColumnHeader(Practice practice) {
+        column_header_textview.setText(String.valueOf(practice.getId()));
 
         // If your TableView should have auto resize for cells & columns.
         // Then you should consider the below lines. Otherwise, you can ignore them.

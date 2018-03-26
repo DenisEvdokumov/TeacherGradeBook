@@ -1,12 +1,14 @@
 package com.example.teachergradebook.data;
 
+import android.arch.persistence.room.Entity;
+
 import com.evrencoskun.tableview.filter.IFilterableModel;
 import com.evrencoskun.tableview.sort.ISortableModel;
 
 /**
  * Created by Денис on 19.02.2018.
  */
-
+@Entity
 public class Cell implements ISortableModel, IFilterableModel {
     private String mId;
     private Object mData;

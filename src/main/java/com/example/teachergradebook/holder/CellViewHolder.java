@@ -19,6 +19,7 @@ import com.evrencoskun.tableview.TableView;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 
 import com.example.teachergradebook.R;
+import com.example.teachergradebook.TableView.TableViewAdapter;
 import com.example.teachergradebook.TableView.TableViewListener;
 
 
@@ -26,11 +27,13 @@ public class CellViewHolder extends AbstractViewHolder {
 
     public  EditText cell_textview;
     public  LinearLayout cell_container;
+    public TableViewAdapter.MyCustomEditTextListener myCustomEditTextListener;
 
-    public CellViewHolder(View itemView) {
+    public CellViewHolder(View itemView, TableViewAdapter.MyCustomEditTextListener myCustomEditTextListener) {
         super(itemView);
-        cell_textview = (EditText) itemView.findViewById(R.id.cell_data);
-        cell_container = (LinearLayout) itemView.findViewById(R.id.cell_container);
+        this.cell_textview = (EditText) itemView.findViewById(R.id.cell_data);
+        this.cell_container = (LinearLayout) itemView.findViewById(R.id.cell_container);
+        this.cell_textview.addTextChangedListener(myCustomEditTextListener);
     }
 
     public void setData(Object data) {
@@ -46,28 +49,31 @@ public class CellViewHolder extends AbstractViewHolder {
 
     }
 
-    public void getData(Context context){
+//    public void getData(Context context){
+//
+//        cell_textview.requestFocus();
+//        final InputMethodManager inputMethodManager = (InputMethodManager) context
+//                .getSystemService(Context.INPUT_METHOD_SERVICE);
+//        inputMethodManager.showSoftInput(cell_textview, InputMethodManager.SHOW_IMPLICIT);
+//
+//        cell_textview.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                Log.i("MyApp",s.toString());
+//            }
+//        });
+//    }
+//
+//
 
-        cell_textview.requestFocus();
-        final InputMethodManager inputMethodManager = (InputMethodManager) context
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputMethodManager.showSoftInput(cell_textview, InputMethodManager.SHOW_IMPLICIT);
-
-        cell_textview.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                Log.i("MyApp",s.toString());
-            }
-        });
-    }
 }
